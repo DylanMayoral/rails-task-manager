@@ -1,0 +1,21 @@
+<div class="vh-100 d-flex flex-column justify-content-center align-items-center">
+  <h2 class="d-flex d-block">Task Details</h2>
+
+  <div class="mt-3 d-flex d-block">
+    <ul>
+      <li class="mb-3">
+        <p class="">
+          <% if @task.completed %>
+            <i class="fa-regular fa-square-check text-success"></i>
+          <% else %>
+            <i class="fa-regular fa-square text-danger"></i>
+          <% end %>
+          <strong class="text-primary"><%= @task.title %></strong>: <%= @task.details.capitalize %>
+        </p>
+      </li>
+    </ul>
+  </div>
+
+  <%= link_to "Back to Task List", tasks_path, class: "btn btn-primary mt-3" %>
+  <%= link_to "Edit Task", edit_path, class: "btn btn-primary mt-3" %>
+</div>
